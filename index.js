@@ -85,22 +85,22 @@ const countWords = (longString) => {
 // 	return words
 // }
 const countEt = (longString) => {
-	const words = longString.match('')
-
-	return words
+	return longString.match(/et/).length
 }
 console.log(countWords(longString))
 console.log(countEt(longString))
 
 // Bonus 2
 const isPalindrome = (phrase) => {
-	const lowerPhrase = phrase.toLowerCase()
-	const lowTrim = ''
-	for (let i = 0; i < lowerPhrase; i++) {
-		if (lowerPhrase[i] !== ' ') lowTrim += lowerPhrase[i]
+	let cleaned = ''
+	for (let i = 0; i < phrase.length; i++) {
+		let c = phrase[i].toLowerCase()
+		if (c >= 'a' && c <= 'z') {
+			cleaned += c
+		}
 	}
-	for (let i = 0; i < phrase.length / 2; i++) {
-		if (lowerPhrase[i] !== lowerPhrase[phrase.length - 1 - i]) {
+	for (let i = 0; i < cleaned.length / 2; i++) {
+		if (cleaned[i] !== cleaned[cleaned.length - 1 - i]) {
 			return false
 		}
 	}
