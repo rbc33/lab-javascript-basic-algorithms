@@ -6,14 +6,16 @@ console.log(`The navigator's name is ${hacker2}`)
 
 // Iteration 2: Conditionals
 if (hacker1.length > hacker2.length) {
-	console.log(`The driver has the longest name, it has ${hacker1} characters.`)
+	console.log(
+		`The driver has the longest name, it has ${hacker1.length} characters.`
+	)
 } else if (hacker1.length == hacker2.length) {
 	console.log(
 		`Wow, you both have equally long names, ${hacker1.length} characters!`
 	)
 } else {
 	console.log(
-		`It seems that the navigator has the longest name, it has ${hacker1} characters.`
+		`It seems that the navigator has the longest name, it has ${hacker2.length} characters.`
 	)
 }
 
@@ -75,11 +77,16 @@ const countWords = (longString) => {
 	}
 	return words + 1
 }
+// const countEt = (longString) => {
+// 	let words = 0
+// 	for (let i = 0; i < longString.length - 1; i++) {
+// 		if (longString[i] + longString[i + 1] === 'et') words++
+// 	}
+// 	return words
+// }
 const countEt = (longString) => {
-	let words = 0
-	for (let i = 0; i < longString.length - 1; i++) {
-		if (longString[i] + longString[i + 1] === 'et') words++
-	}
+	const words = longString.match('')
+
 	return words
 }
 console.log(countWords(longString))
@@ -88,6 +95,10 @@ console.log(countEt(longString))
 // Bonus 2
 const isPalindrome = (phrase) => {
 	const lowerPhrase = phrase.toLowerCase()
+	const lowTrim = ''
+	for (let i = 0; i < lowerPhrase; i++) {
+		if (lowerPhrase[i] !== ' ') lowTrim += lowerPhrase[i]
+	}
 	for (let i = 0; i < phrase.length / 2; i++) {
 		if (lowerPhrase[i] !== lowerPhrase[phrase.length - 1 - i]) {
 			return false
