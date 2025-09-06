@@ -1,4 +1,5 @@
 // Iteration 1: Names and Input
+// const hacker1 = prompt('hi! whats your name')
 const hacker1 = 'ricardo'
 console.log(`The driver's name is ${hacker1}`)
 const hacker2 = 'miguel'
